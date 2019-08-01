@@ -33,17 +33,17 @@ pipeline
                 
             }
         }
-        /*stage ('zipping'){
+        stage ('zipping'){
             steps {
                  
-                sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
+                sh 'cd 	dist/XFS; zip -r ../../XFS.zip . ;'
             }
         }
         stage ('Nexus'){
             steps{
                 sh 'ls'
                 withCredentials([usernamePassword(credentialsId: 'sudipa_nexus', passwordVariable: 'pass', usernameVariable: 'usr')]) {
-                 sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/Frontend_Angular/abcApp.zip'
+                 sh label: '', script: 'curl -u ${usr}:${pass} --upload-file abcApp.zip http://ec2-3-17-164-37.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/xfs_dashboard/XFS.zip'
                 }
                 
             }
@@ -51,12 +51,12 @@ pipeline
         stage ('Deploy') {
             steps {
               withCredentials([file(credentialsId: 'angular-react-deployment-server', variable: 'deployment_server')]) {
-                   sh 'scp -v -i ${deployment_server} abcApp.zip ubuntu@18.188.202.13:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@18.188.202.13 "cd /home/ubuntu; unzip -o abcApp.zip -d angular__App;pm2 restart "angular__App""'
+                   sh 'scp -v -i ${deployment_server} XFS.zip ubuntu@18.188.202.13:/home/ubuntu'
+                   sh 'ssh -v -i ${deployment_server} ubuntu@18.188.202.13 "cd /home/ubuntu; unzip -o XFS.zip -d xfs_dashboard;pm2 restart "xfs_dashboard""'
                   
                }
             }
-        }*/
+        }
         
     }
     post { 
