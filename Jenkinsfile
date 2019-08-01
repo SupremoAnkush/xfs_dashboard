@@ -43,7 +43,7 @@ pipeline
             steps{
                 sh 'ls'
                 withCredentials([usernamePassword(credentialsId: 'ankush_nexus_key', passwordVariable: 'ankush_nexus_password', usernameVariable: 'ankush_nexus')]) {
-                 sh label: '', script: 'curl -v -u ${ankush_nexus}:${ankush_nexus_password}  --upload-file XFS.zip  http://3.17.164.37:8081/nexus/content/repositories/devopstraining/xfs_dashboard/XFS-${BUILD_NUMBER}.zip'
+                 sh label: '', script: 'curl -v -u ${ankush_nexus}:${ankush_nexus_password}  --upload-file XFS.zip  http://18.224.155.110:8081/nexus//content/repositories/devopstraining/xfs_dashboard/XFS-${BUILD_NUMBER}.zip'
                 //sh label: '', script: 'curl -v -u ${ankush_nexus}:${ankush_nexus_password} --upload-file ankushApp.zip http://3.17.164.37:8081/nexus/content/repositories/devopstraining/Team_AHM/ankush-${BUILD_NUMBER}.zip'
                 }
                 
