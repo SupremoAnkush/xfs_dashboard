@@ -33,7 +33,7 @@ pipeline
                 
             }
         }
-        stage ('zipping'){
+        /*stage ('zipping'){
             steps {
                  
                 sh 'cd dist/angularclient; zip -r ../../abcApp.zip . ;'
@@ -58,7 +58,7 @@ pipeline
             }
         }
         
-    }
+    }*/
     post { 
          success { 
             
