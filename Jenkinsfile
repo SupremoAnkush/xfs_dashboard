@@ -61,7 +61,7 @@ pipeline
             steps {
               withCredentials([file(credentialsId: 'ashish_deployment_server', variable: 'deployment_server')])  {
                    sh 'scp -v -i ${deployment_server} XFS.zip ubuntu@13.232.255.41:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@13.232.255.41 "cd /home/ubuntu; unzip -o XFS.zip -d xfs_dashboard;pm2 start -p 3000 name "xfs_dashboard""'
+                   sh 'ssh -v -i ${deployment_server} -oStrictHostKeyChecking=no host ubuntu@13.232.255.41 "cd /home/ubuntu; unzip -o XFS.zip -d xfs_dashboard;pm2 start -p 3000 name "xfs_dashboard""'
                   
                }
             }
