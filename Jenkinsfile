@@ -19,7 +19,7 @@ pipeline
                  sh 'npm run test'
               }
          }*/
-       stage('SonarQube') 
+       /*stage('SonarQube') 
        {
            
             environment {
@@ -33,7 +33,7 @@ pipeline
               //sh 'npm run sonar'
            }
             
-        }
+        }*/
        
         stage('build') {
             steps {
