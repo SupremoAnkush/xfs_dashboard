@@ -19,13 +19,21 @@ pipeline
                  sh 'npm run test'
               }
          }*/
-       /* stage('SonarQube') {    
-              steps {
-              sh 'npm install sonarqube-scanner --save-dev'
-              sh 'npm run sonar' 
+       stage('SonarQube') 
+       {
+           
+            environment {
+                scannerHome=tool 'sonar scanner'
+            }
+             //tools {scannerHome "SonarScanner"}
+        steps{
+             withSonarQubeEnv(credentialsId: 'sonar_token_ankush', installationName: 'sonar_server') {
+                  sh '${scannerHome}/bin/sonar-scanner -Dproject.settings=./sonar-project.properties'
+              }
+              //sh 'npm run sonar'
            }
-        }*/          
-      
+            
+        }
        
         stage('build') {
             steps {
@@ -49,15 +57,15 @@ pipeline
                 
             }
         }
-        /*stage ('Deploy') {
+        stage ('Deploy') {
             steps {
-              withCredentials([file(credentialsId: 'angular-react-deployment-server', variable: 'deployment_server')]) {
-                   sh 'scp -v -i ${deployment_server} XFS.zip ubuntu@18.188.202.13:/home/ubuntu'
-                   sh 'ssh -v -i ${deployment_server} ubuntu@18.188.202.13 "cd /home/ubuntu; unzip -o XFS.zip -d xfs_dashboard;pm2 start -p name "xfs_dashboard""'
+              withCredentials([file(credentialsId: 'tomcat_ashish', variable: 'deployment_server')]) {
+                   sh 'scp -v -i ${deployment_server} XFS.zip ubuntu@13.232.255.41:/home/ubuntu'
+                   sh 'ssh -v -i ${deployment_server} ubuntu@13.232.255.41 "cd /home/ubuntu; unzip -o XFS.zip -d xfs_dashboard;pm2 start -p 3000 name "xfs_dashboard""'
                   
                }
             }
-        }*/
+        }
         
     }
     post { 
