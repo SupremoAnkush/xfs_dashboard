@@ -1,0 +1,10 @@
+.footer {
+      box-shadow: 8px 4px 8px 20px rgba(13, 5, 92, 0.2);
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(1, 76, 105);
+      color: white;
+      text-align: center;
+    }

@@ -1,15 +1,84 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div>
+ 
+  <head>
+  <style>
+
+.card {
+    box-shadow: 0 6px 10px 0 rgba(95, 84, 179, 0.644); 
+   /* text-align: left; */
+   font-family: arial;
+   font-size: 100%;
+   top: 0px;
+   height: 50px;
+   /* background-color: rgb(252, 248, 248); */
+   padding-top:8px;
+   font-size: 100%;
+   padding-right: 0px;
+   padding-bottom: 0px;
+   padding-left: 20px;
+  }
+
+.footer {
+      box-shadow: 8px 4px 8px 20px rgba(13, 5, 92, 0.2);
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(1, 76, 105);
+      color: white;
+      text-align: center;
+    }
+
+     .element {
+      box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.2);
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+      padding-top: 0px;
+      padding-right: 30px;
+      padding-bottom: 130px;
+      padding-left: 30px;
+      font-size:140%
+     }
+    
+    .space {
+      padding-top: 40px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      padding-left: 40px;
+    }
+   
+  </style>
+  </head>
+    
 </div>
-<form>
-  Title of the job:<br>
-  <input type="text" name="firstname"><br>
-  Last name:<br>
-  <input type="text" name="lastname">
-</form>
+
+<!-- <div class= "card">
+
+    <h1 style="font-size: 150%" > <img src="https://banner2.kisspng.com/20180708/w/kisspng-wipro-logo-business-corporate-identity-5b420d04296d14.4683181615310553641697.jpg" alt="Wipro logo" style="width:60px;height:40px;">
+    XFS | Digital Rig </h1>
+  
+</div> -->
+ <app-nav-bar></app-nav-bar>
+
+  <div class= "space"></div>
+<div class= "element">
+   <h2 style="font-size:120%; text-align: center; font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> <b>Jenkin's Build Status</b> </h2><br>
+<b>Commiter's Name</b> : {{dash.commiter}}<br>
+<b>Title of the job</b> : {{dash.jobtitle}}<br>
+<b>Build Number</b> : {{dash.number}}<br>
+<b>Build Status</b> : {{dash.status}}<br>
+<b>Build Url</b> : {{link}}<br>
+  </div>
+  
+
+<!-- <div class="footer">
+  <p > <b>Team KSR </b></p> 
+  <p style="text-align: centre; font-size:80%"> SupremoAnkush, Nitin kundu, Ashish Singh, Manisha Sarangi, Bizeet Dey, Sudipa Behra, Samlee Mohanty</p> 
+</div> -->
+<app-refresh></app-refresh>
+<app-footer></app-footer>
 
 <router-outlet></router-outlet>

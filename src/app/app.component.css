@@ -1,9 +1,19 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+.element {
+  box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100px;
+  margin: auto;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 130px;
+  padding-left: 30px;
+  font-size:140%
+ }
+
+/* .space {
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+} */

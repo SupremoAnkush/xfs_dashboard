@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { User } from './user';
+import { Dashboard } from './dashboard';
 import { Observable } from 'rxjs';
 
  
 @Injectable()
-export class UserService {
+export class ServicesService {
  
   private usersUrl: string;
  
@@ -13,6 +13,7 @@ export class UserService {
     this.usersUrl = 'http://18.188.202.13:8080/ManisaSpringSample/users';
   }
  
-  //public findAll(): Observable<User[]> {
-   // return this.http.get<User[]>(this.usersUrl);
+  public findAll(): Observable<Dashboard> {
+    return this.http.get<Dashboard>(this.usersUrl);
   }
+}
