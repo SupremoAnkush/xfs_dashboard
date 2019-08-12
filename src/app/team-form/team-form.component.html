@@ -15,8 +15,21 @@
             required #gitUrl="ngModel">
           <div [hidden]="!gitUrl.pristine" class="alert alert-danger">Git URL is required</div>
         </div>
+        <div class="form-group">
+          <label for="memberName">Member Name</label>
+          <input type="text" [(ngModel)]="teams.memberName" 
+            class="form-control" id="memberName" name="memberName" placeholder="Enter memberName"
+            required #memberName="ngModel">
+          <div [hidden]="!memberName.pristine" class="alert alert-danger">memberName is required</div>
+        </div>
+        <div class="form-group">
+          <label for="memberNumber">GitUrl</label>
+          <input type="text" [(ngModel)]="teams.memberNumber" 
+            class="form-control" id="memberNumber" name="memberNumber" placeholder="Enter memberNumber"
+            required #memberNumber="ngModel">
+          <div [hidden]="!memberNumber.pristine" class="alert alert-danger">memberNumber is required</div>
+        </div>
         <button type="submit" class="btn btn-info">Submit</button>
       </form>
     </div>
   </div>
-  <router-outlet></router-outlet>

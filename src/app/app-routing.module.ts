@@ -9,7 +9,7 @@ import { TeamFormComponent } from './team-form/team-form.component';
 
 
 const routes: Routes = [ 
-//{ path: '', component: SchedularComponent},
+{ path: '', component: SchedularComponent},
 { path: 'teams', component: TeamFormComponent },
 
 ];
