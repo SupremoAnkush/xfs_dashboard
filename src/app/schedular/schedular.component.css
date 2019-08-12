@@ -1,0 +1,9 @@
+.time {
+	background-color: rgb(66, 63, 61);
+	color: white;
+	width: 25px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 5px;
+}
+

@@ -9,6 +9,7 @@ import * as moment from 'moment';
 })
 export class RefreshComponent  {
 	
+	
 
 	onClick($event) {
 		console.log('Click!', event)

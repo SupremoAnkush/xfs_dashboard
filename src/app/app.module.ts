@@ -10,13 +10,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RefreshComponent } from './refresh/refresh.component';
+import { SchedularComponent } from './schedular/schedular.component';
+import { TeamFormComponent } from './team-form/team-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    RefreshComponent
+    RefreshComponent,
+    SchedularComponent,
+    TeamFormComponent
   ],
   imports: [
     BrowserModule,

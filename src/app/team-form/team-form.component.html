@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="teamName">teamName</label>
+          <input type="text" [(ngModel)]="teams.teamName" 
+            class="form-control" id="teamName" name="teamName" placeholder="Enter team name"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!teamName.pristine" class="alert alert-danger">Team Name is required</div>
+        <div class="form-group">
+          <label for="gitUrl">GitUrl</label>
+          <input type="text" [(ngModel)]="teams.gitUrl" 
+            class="form-control" id="gitUrl" name="gitUrl" placeholder="Enter Git URL"
+            required #gitUrl="ngModel">
+          <div [hidden]="!gitUrl.pristine" class="alert alert-danger">Git URL is required</div>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
